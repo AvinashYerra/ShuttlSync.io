@@ -71,6 +71,16 @@ class BadmintonGame {
     }
 
     resetGame() {
+        // First check if there was a winner
+        if (this.winner) {
+            // If there was a winner, refresh the page after a short delay
+            setTimeout(() => {
+                window.location.reload();
+            }, 100);
+            return;
+        }
+
+        // If no winner, proceed with normal reset
         this.teamAScore = 0;
         this.teamBScore = 0;
         this.isGameStarted = false;
