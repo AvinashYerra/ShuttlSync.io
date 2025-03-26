@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShuttlSync - Badminton Score Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>ShuttlSync</h1>
+            <p class="tagline">Sync up your scores effortlessly</p>
+        </header>
+
+        <p class="info-text">
+            ShuttlSync is a modern badminton score tracking application designed for both casual players and competitive matches. Track scores, manage serves, and enjoy a seamless scoring experience.
+        </p>
+
+        <div class="game-setup">
+            <div class="toss-section">
+                <button id="tossButton" class="btn">Toss</button>
+                <div id="tossResult" class="toss-result"></div>
+            </div>
+            <button id="startGame" class="btn" disabled>Start Game</button>
+        </div>
+
+        <div class="score-board" style="display: none;">
+            <div class="team-score">
+                <h2 id="teamAName">Team A</h2>
+                <div class="score" id="teamAScore">0</div>
+                <div class="buttons">
+                    <button class="btn score-btn" data-team="A" data-action="add">+</button>
+                    <button class="btn score-btn" data-team="A" data-action="subtract">-</button>
+                </div>
+            </div>
+
+            <div class="game-info">
+                <button id="resetGame" class="btn">Reset Game</button>
+            </div>
+
+            <div class="team-score">
+                <h2 id="teamBName">Team B</h2>
+                <div class="score" id="teamBScore">0</div>
+                <div class="buttons">
+                    <button class="btn score-btn" data-team="B" data-action="add">+</button>
+                    <button class="btn score-btn" data-team="B" data-action="subtract">-</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="court-container">
+            <div class="badminton-court">
+                <div class="court-section team-a">
+                    <div class="court-block" id="A1">A1</div>
+                    <div class="court-block" id="A2">A2</div>
+                </div>
+                <div class="court-section team-b">
+                    <div class="court-block" id="B1">B1</div>
+                    <div class="court-block" id="B2">B2</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="instructions">
+                <h3>How to Use</h3>
+                <ul>
+                    <li><strong>+</strong> Click to add a point to the team's score</li>
+                    <li><strong>-</strong> Click to subtract a point from the team's score</li>
+                    <li><strong>White Block</strong> Indicates the current serving position</li>
+                </ul>
+            </div>
+            <p>Made with <span class="heart">♥</span> by  Avinash & Suresh</p>
+            <p>© 2025 ShuttlSync. All rights reserved.</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 

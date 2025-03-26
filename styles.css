@@ -1,0 +1,571 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+body {
+    background-color: white;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    background-color: #27ae60;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 8px 24px rgba(255, 255, 255, 0.08);
+    width: 100%;
+    max-width: 1200px;
+    border: 1px solid #ffffff;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.15);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+h1, h2, h3, .winner-announcement {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 1px;
+}
+
+h1 {
+    color: #27ae60;
+    margin-bottom: 12px;
+    font-size: 4.5rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tagline {
+    color: #27ae60;
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 0;
+    opacity: 0.9;
+}
+
+.team-score h2 {
+    color: #ffffff;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.game-setup {
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 30px;
+}
+
+.team-inputs {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.team {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+label {
+    color: #27ae60;
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+input {
+    padding: 12px 16px;
+    border: 1px solid #27ae60;
+    border-radius: 12px;
+    font-size: 1rem;
+    width: 200px;
+    background-color: #27ae60;
+    color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #27ae60;
+    box-shadow: 0 0 0 2px rgba(39, 174, 96, 0.1);
+}
+
+input::placeholder {
+    color: #ffffff;
+    opacity: 0.7;
+}
+
+.btn, #tossButton {
+    background-color: #27ae60;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    padding: 14px 28px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn:hover, #tossButton:hover {
+    background-color: #ffffff;
+    color: #27ae60;
+    transform: translateY(-1px);
+}
+
+.score-board {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    gap: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 30px;
+}
+
+.team-score {
+    text-align: center;
+    padding: 20px 30px;
+    border: 2px solid #ffffff;
+    border-radius: 15px;
+    background-color: #09f5635f;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.08);
+    min-width: 200px;
+}
+
+.score {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 4rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 10px 0;
+    letter-spacing: 1px;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.score-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #ffffff;
+    background-color: #27ae60;
+    color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.score-btn:hover {
+    background-color: #ffffff;
+    color: #27ae60;
+    transform: translateY(-1px);
+}
+
+.game-info {
+    text-align: center;
+    padding: 0 20px;
+}
+
+.sets {
+    margin-bottom: 15px;
+}
+
+h3 {
+    color: #ffffff;
+    margin-bottom: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    font-size: 1.1rem;
+}
+
+#setsScore, #currentSet {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+/* Court Styling */
+.court-container {
+    margin-top: 40px;
+    padding: 30px;
+    background-color: #27ae60;
+    border-radius: 20px;
+    position: relative;
+    border: 1px solid #ffffff;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.04);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 30px;
+}
+
+.badminton-court {
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.court-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    justify-content: center;
+    flex: 1;
+    position: relative;
+}
+
+.court-block {
+    width: 100%;
+    height: 200px;
+    background-color: #27ae60;
+    border: 2px solid #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #ffffff;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+}
+
+/* Net styling */
+.badminton-court::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 8px;
+    background-color: #1a5d1a;
+    z-index: 2;
+    transform: translateX(-50%);
+    box-shadow: 0 0 10px rgba(26, 93, 26, 0.3);
+}
+
+/* Net posts */
+.badminton-court::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: -10px;
+    bottom: -10px;
+    width: 4px;
+    background-color: #1a5d1a;
+    z-index: 1;
+    transform: translateX(-50%);
+}
+
+/* Serving position highlight */
+.court-block.active {
+    background-color: #ffffff !important;
+    color: #27ae60 !important;
+    border-color: #ffffff !important;
+    z-index: 2;
+}
+
+/* Remove hover effects for active blocks */
+.court-block.active:hover {
+    background-color: #ffffff !important;
+    transform: none;
+}
+
+/* Remove the old serving class since we're using active */
+.court-block.serving {
+    background-color: #27ae60;
+    border-color: #ffffff;
+    color: #ffffff;
+    z-index: 1;
+    transform: none;
+    box-shadow: none;
+}
+
+.court-block.serving:hover {
+    background-color: #27ae60;
+    transform: none;
+}
+
+.team-a .court-block, .team-b .court-block {
+    border-color: #ffffff;
+    background-color: #27ae60;
+}
+
+.court-block:hover {
+    background-color: #27ae60;
+}
+
+/* Remove the old net line */
+.court-section:first-child::after {
+    display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 30px 20px;
+    }
+
+    .badminton-court {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .court-section {
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .court-block {
+        height: 150px;
+    }
+
+    h1 {
+        font-size: 2.8rem;
+    }
+    
+    .tagline {
+        font-size: 1rem;
+    }
+
+    .score {
+        font-size: 2.8rem;
+    }
+
+    .score-board {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .team-score {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .court-block {
+        height: 120px;
+        font-size: 1.2rem;
+    }
+
+    .btn {
+        padding: 12px 24px;
+        font-size: 0.9rem;
+    }
+
+    .score-btn {
+        width: 44px;
+        height: 44px;
+        font-size: 1.2rem;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+    
+    .tagline {
+        font-size: 0.9rem;
+    }
+}
+
+.toss-section {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.toss-result {
+    margin-top: 12px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #ffffff;
+    display: none;
+    padding: 10px;
+    border-radius: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#tossButton {
+    background-color: #27ae60;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    padding: 14px 28px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+}
+
+#tossButton:hover {
+    background-color: #ffffff;
+    color: #27ae60;
+    transform: translateY(-1px);
+}
+
+.winner-announcement {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    color: #27ae60;
+    padding: 20px 40px;
+    border-radius: 12px;
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
+    z-index: 1000;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.btn:disabled {
+    background-color: #27ae60;
+    color: #ffffff;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Add styles for the footer section */
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    color: #ffffff;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer p {
+    margin: 8px 0;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.heart {
+    color: #ffffff;
+    display: inline-block;
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.info-text {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    max-width: 800px;
+    margin: 30px auto;
+    line-height: 1.6;
+    text-align: center;
+    padding: 20px 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: #ffffff;
+    width: 90%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 30px;
+}
+
+/* Update responsive styles */
+@media (max-width: 768px) {
+    .footer {
+        margin-top: 30px;
+        padding: 15px;
+    }
+    
+    .info-text {
+        font-size: 0.85rem;
+        padding: 0 15px;
+    }
+}
+
+/* Add styles for instructions */
+.instructions {
+    text-align: center;
+    margin: 20px auto;
+    max-width: 600px;
+    padding: 15px;
+    color: #ffffff;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-top: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 30px;
+}
+
+.instructions ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.instructions li {
+    margin: 8px 0;
+}
+
+.instructions strong {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* Update footer spacing */
+.footer p:first-of-type {
+    margin-top: 30px;
+} 
