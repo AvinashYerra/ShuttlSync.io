@@ -43,4 +43,4 @@ A modern badminton score tracking application designed for both casual players a
 
 ## 📝 License
 
-© 2024 ShuttlSync. All rights reserved. 
+© 2025 ShuttlSync. All rights reserved. 
